@@ -1,0 +1,32 @@
+{
+  "name": "Goodu",
+  "version": "0.1.0",
+  "description": "按住Ctrl/Shift/Alt的时候点击“百度一下”会使用Google搜索",
+  "permissions": ["activeTab", "declarativeContent", "storage", "*://*.baidu.com/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/goodu16.png",
+      "32": "images/goodu32.png",
+      "48": "images/goodu48.png",
+      "128": "images/goodu128.png"
+    }
+  },
+  "icons": {
+    "16": "images/goodu16.png",
+    "32": "images/goodu32.png",
+    "48": "images/goodu48.png",
+    "128": "images/goodu128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.baidu.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "manifest_version": 2
+}
